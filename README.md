@@ -1,6 +1,6 @@
 # Dark Plus
-A dark colorscheme written in lua for neovim. Inspiration taken
-from [onedark.nvim](https://github.com/navarasu/onedark.nvim) and
+A dark colorscheme written in lua for neovim. Based of off
+[onedark.nvim](https://github.com/navarasu/onedark.nvim) and
 [zephyr-nvim](https://github.com/glepnir/zephyr-nvim)
 
 ### Install 
