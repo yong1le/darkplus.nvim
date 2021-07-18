@@ -25,3 +25,6 @@ colorscheme darkplus
 - [Whichkey](https://github.com/folke/which-key.nvim)
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
 - Lsp Diagnostics
+
+## Preview
+![Color scheme Preview](./assets/showcase.png)
