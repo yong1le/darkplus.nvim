@@ -181,7 +181,7 @@ function darkplus.load_plugins()
     TSNamespace = {fg = darkplus.fg},
     TSNone = {fg = darkplus.fg},
     TSNumber = {fg = darkplus.orange},
-    TSOperator = {fg = darkplus.dark_red},
+    TSOperator = {fg = darkplus.yellow},
     TSParameter = {fg = darkplus.red},
     TSParameterReference = {fg = darkplus.fg},
     TSProperty = {fg = darkplus.cyan},
@@ -225,13 +225,81 @@ function darkplus.load_plugins()
     GitSignsDelete = {fg = darkplus.red},
     GitSignsDeleteLn = {fg = darkplus.red},
     GitSignsDeleteNr = {fg = darkplus.red},
+
+    -- telescope
+    TelescopeBorder = {fg = darkplus.dark_red},
+    TelescopePromptBorder = {fg = darkplus.dark_red},
+    TelescopeResultsBorder = {fg = darkplus.dark_red},
+    TelescopePreviewBorder = {fg = darkplus.dark_red},
+    TelescopePromptPrefix = {fg = darkplus.blue},
+    TelescopeSelectionCaret = {fg = darkplus.blue},
+
+    -- dashboard
+    DashboardHeader = {fg = darkplus.green},
+    DashboardCenter = {fg = darkplus.blue},
+    DashboardShortcut = {fg = darkplus.cyan},
+    DashboardFooter = {fg = darkplus.orange},
+
+    -- whichkey
+    WhichKey = {fg = darkplus.red},
+    WhichKeyDesc = {fg = darkplus.blue},
+    WhichKeyGroup = {fg = darkplus.orange},
+    WhichKeySeperator = {fg = darkplus.fg},
+
+    -- nvim tree
+    NvimTreeFolderName = {fg = darkplus.blue},
+    NvimTreeSpecialFile = {fg = darkplus.green, underline=false},
+
+    -- lsp related
+    LspDiagnosticsSignError = {fg=darkplus.red};
+    LspDiagnosticsSignWarning = {fg=darkplus.yellow};
+    LspDiagnosticsSignInformation = {fg=darkplus.blue};
+    LspDiagnosticsSignHint = {fg=darkplus.purple};
+
+    LspDiagnosticsVirtualTextError = {fg=darkplus.red};
+    LspDiagnosticsVirtualTextWarning= {fg=darkplus.yellow};
+    LspDiagnosticsVirtualTextInformation = {fg=darkplus.blue};
+    LspDiagnosticsVirtualTextHint = {fg=darkplus.purple};
+
+    LspDiagnosticsUnderlineError = {style="undercurl",sp=darkplus.red};
+    LspDiagnosticsUnderlineWarning = {style="undercurl",sp=darkplus.yellow};
+    LspDiagnosticsUnderlineInformation = {style="undercurl",sp=darkplus.blue};
+    LspDiagnosticsUnderlineHint = {style="undercurl",sp=darkplus.purple};
+
+    -- markdown
+    markdownBlockquote = {fg = darkplus.grey},
+    markdownBold = {fg = darkplus.none, bold = true},
+    markdownBoldDelimiter = {fg = darkplus.red},
+    markdownCode = {fg = darkplus.green},
+    markdownCodeBlock = {fg = darkplus.green},
+    markdownCodeDelimiter = {fg = darkplus.yellow},
+    markdownH1 = {fg = darkplus.orange, bold = true},
+    markdownH2 = {fg = darkplus.orange, bold = true},
+    markdownH3 = {fg = darkplus.orange, bold = true},
+    markdownH4 = {fg = darkplus.orange, bold = true},
+    markdownH5 = {fg = darkplus.orange, bold = true},
+    markdownH6 = {fg = darkplus.orange, bold = true},
+    markdownHeadingDelimiter = {fg = darkplus.grey},
+    markdownId = {fg = darkplus.yellow},
+    markdownIdDeclaration = {fg = darkplus.yellow},
+    markdownItalic = {fg = darkplus.none, italic = true},
+    markdownItalicDelimiter = {fg = darkplus.red, italic = true},
+    markdownLinkDelimiter = {fg = darkplus.yellow},
+    markdownLinkText = {fg = darkplus.red},
+    markdownLinkTextDelimiter = {fg = darkplus.yellow},
+    markdownListMarker = {fg = darkplus.red},
+    markdownOrderedListMarker = {fg = darkplus.red},
+    markdownRule = {fg = darkplus.purple},
+    markdownUrl = {fg = darkplus.blue, underline = true},
+    markdownUrlDelimiter = {fg = darkplus.yellow},
+    markdownUrlTitleDelimiter = {fg = darkplus.green}
   }
   return syntax
 end
 
--- Loading the colorscheme
 local async_load_plugin
 
+-- Loading commons
 async_load_plugin = vim.loop.new_async(vim.schedule_wrap(function ()
   darkplus.terminal_color()
   local syntax = darkplus.load_plugins()
@@ -241,6 +309,7 @@ async_load_plugin = vim.loop.new_async(vim.schedule_wrap(function ()
   async_load_plugin:close()
 end))
 
+-- Loading Plugins
 function darkplus.colorscheme()
   vim.api.nvim_command('hi clear')
   if vim.fn.exists('syntax_on') then
