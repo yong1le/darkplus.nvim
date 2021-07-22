@@ -54,7 +54,7 @@ function darkplus.load_syntax()
     -- common
     Normal                          = {fg = darkplus.fg, bg = darkplus.bg0},
     Terminal                        = {fg = darkplus.fg, bg = darkplus.bg0},
-    EndOfBuffer                     = {fg = darkplus.bg0, bg = darkplus.bg0},
+    EndOfBuffer                     = {fg = darkplus.bg0},
     FoldColumn                      = {fg = darkplus.fg, bg = darkplus.bg1},
     Folded                          = {fg = darkplus.fg, bg = darkplus.bg1},
     SignColumn                      = {fg = darkplus.fg, bg = darkplus.bg0},
