@@ -30,7 +30,7 @@ function darkplus.terminal_color()
   vim.g.terminal_color_4  = darkplus.blue
   vim.g.terminal_color_5  = darkplus.purple
   vim.g.terminal_color_6  = darkplus.cyan
-  vim.g.terminal_color_7  = darkplus.bg1
+  vim.g.terminal_color_7  = darkplus.fg
   vim.g.terminal_color_8  = darkplus.brown
   vim.g.terminal_color_9  = darkplus.red
   vim.g.terminal_color_10 = darkplus.green
